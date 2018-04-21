@@ -24,4 +24,8 @@
 #connect clusters ():
 -by utilizing greedy method for lowest distance between two cities of adjacent sectors
 
-#PrintPath();
+#PrintPath():
+
+#PlotPath:
+- gnuplot?
+- matplotlib?
