@@ -23,7 +23,7 @@ total = t1 - t0
 
 print("Optimal route:", path)
 print("Length:", sum)
-print("Time Take:", total, "s")
+print("Time Take: %.3fs" %total)
 
 # graph it
 tsp_util.graphplot(path)
