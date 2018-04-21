@@ -19,10 +19,10 @@
 
 
 #process individual clusters():
--using nearest neighbor by randomly selecting initial city
+- using nearest neighbor by randomly selecting initial city
 
 #connect clusters ():
--by utilizing greedy method for lowest distance between two cities of adjacent sectors
+- by utilizing greedy method for lowest distance between two cities of adjacent sectors
 
 #PrintPath():
 
