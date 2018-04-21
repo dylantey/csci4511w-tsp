@@ -1,5 +1,9 @@
 # The Plan
 
+
+- use greedy method to figure out which one to start with based on number
+- use nearest neighbor to create path in sub region
+
 #process input file():
 -spit out file with just x and y
 
@@ -12,9 +16,7 @@
 - create min max for each sub region (4)
 - count number of cities in each sub region
 - spit out the arrays with cities separated in each
--
-- use greedy method to figure out which one to start with based on number
-- use nearest neighbor to create path in sub region
+
 
 #process individual clusters():
 -using nearest neighbor by randomly selecting initial city
