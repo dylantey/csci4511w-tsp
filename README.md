@@ -11,10 +11,7 @@
 - process file with x, y
 - find min and max x coordinate
 - create 4 regions (or relative number based on 3 of total cities) based on x increment
-- find min max y coordinates
-- create 4 regions based on y increment
 - create min max for each sub region (4)
-- count number of cities in each sub region
 - spit out the arrays with cities separated in each
 
 #process individual clusters():
@@ -26,5 +23,3 @@
 #PrintPath():
 
 #PlotPath:
-- gnuplot?
-- matplotlib?
