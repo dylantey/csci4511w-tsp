@@ -7,7 +7,7 @@
 #process input file():
 -spit out file with just x and y
 
-#findclusters():
+#build clusters and fillclusters():
 - process file with x, y
 - find min and max x coordinate
 - create 4 regions (or relative number based on 3 of total cities) based on x increment
@@ -16,7 +16,6 @@
 - create min max for each sub region (4)
 - count number of cities in each sub region
 - spit out the arrays with cities separated in each
-
 
 #process individual clusters():
 - using nearest neighbor by randomly selecting initial city
