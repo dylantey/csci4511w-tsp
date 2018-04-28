@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Apr 21 14:36:46 2018
 
-@author: Dylan Tey
+@authors: Dylan Tey and Lidiya Dergacheva
 """
 
 import sys
