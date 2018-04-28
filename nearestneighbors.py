@@ -5,7 +5,7 @@ import time
 import random
 import tsp_util
 
-t0 = time.time()
+#t0 = time.time()
 file = open('qa194.tsp','r').read().splitlines()[7:-1]
 
 list = []
