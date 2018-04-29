@@ -1,15 +1,17 @@
 import sys
-import timeit
 import math
 import tsp_util
 import clusters
 import matplotlib
 import random
+import time
 
 
 #MAIN-------------------------------
 list = []
 filename = 'qa194.tsp'
+
+t0 = time.time()
 
 #process file to get proper input
 list = tsp_util.processFile(filename)
@@ -77,7 +79,17 @@ cities.append(fourthCluster.pop(0))
 
 firstList = tsp_util.combineClusters(firstList,secondList,thirdList,fourthList,cities)
 
+t1 = time.time()
+total = t1 - t0
+
+
 
 print("\n route:", firstList)
+
+sum = tsp_util.sumDistance(firstList)
+
+
+print("Length:", sum)
+print("Time Take: %.3fs" %total)
 
 tsp_util.graphplot(firstList)

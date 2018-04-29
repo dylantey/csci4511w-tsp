@@ -39,6 +39,16 @@ def findpath(point, list):
 def sumDistance(list):
     sum = 0
 
+    for coordinate in range(0,len(list)-1):
+        pointA = list[coordinate]
+        pointB = list[coordinate+1]
+
+
+        # sqrt(c^2)= sqrt((a-a2)^2+(b-b2)^2)
+        sum += math.sqrt((int(pointA[0]) - int(pointB[0]))**2 + (int(pointA[1]) - int(pointB[1]))**2)
+
+
+
 
     return sum
 def processFile(filename):
@@ -57,7 +67,7 @@ def processFile(filename):
     return list
 
 def nearestNeighbor(list):
-    random_number = random.randint(0, len(list)+1)
+    random_number = random.randint(0, len(list))
     print(random_number)
 
     point = list.pop(random_number) # pop out random item from list
