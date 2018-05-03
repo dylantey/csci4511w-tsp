@@ -9,7 +9,7 @@ import time
 
 #MAIN-------------------------------
 list = []
-filename = 'qa194.tsp'
+filename = 'wi29.tsp'
 
 t0 = time.time()
 
@@ -40,7 +40,7 @@ fourthList.extend(fourthCluster)
 #find optimal path in each clusters
 sumList = []
 sum = 0
-print("\n")
+print("\n first list is")
 print(firstList)
 firstList, sum = tsp_util.nearestNeighbor(firstList)
 sumList.append(sum)
@@ -55,6 +55,61 @@ sumList.append(sum)
 
 #first sort the cluster, then get 2 max from each, shove into aggregate list
 cities = []
+
+firstCluster.sort()
+
+if len(firstCluster) >= 2:
+    cities.append(firstCluster.pop(0))
+    cities.append(firstCluster.pop(-1))
+    cities.append(firstCluster.pop(-1))
+    cities.append([])
+# doesnt pop if it's only one element
+
+
+secondCluster.sort()
+
+if len(secondCluster) >= 4:
+    cities.append(secondCluster.pop(-1))
+    cities.append(secondCluster.pop(0))
+    cities.append(secondCluster.pop(-1))
+    cities.append(secondCluster.pop(0))
+    cities.append([])
+# doesnt pop if it's only one element
+elif len(secondCluster) >= 2:
+    cities.append(secondCluster.pop(-1))
+    cities.append(secondCluster.pop(0))
+    cities.append([])
+# doesnt pop if it's only one element
+
+
+thirdCluster.sort()
+
+if len(thirdCluster) >= 4:
+    cities.append(thirdCluster.pop(-1))
+    cities.append(thirdCluster.pop(0))
+    cities.append(thirdCluster.pop(-1))
+    cities.append(thirdCluster.pop(0))
+    cities.append([])
+# doesnt pop if it's only one element
+elif len(thirdCluster) >= 2:
+    cities.append(thirdCluster.pop(-1))
+    cities.append(thirdCluster.pop(0))
+    cities.append([])
+# doesnt pop if it's only one element
+
+
+fourthCluster.sort()
+
+if len(fourthCluster) >= 2:
+    cities.append(fourthCluster.pop(0))
+    cities.append(fourthCluster.pop(0))
+    cities.append([])
+# doesnt pop if it's only one element
+
+
+
+
+"""
 firstCluster.sort()
 cities.append(firstCluster.pop(-1))
 cities.append(firstCluster.pop(-1))
@@ -75,17 +130,15 @@ cities.append(fourthCluster.pop(-1))
 cities.append(fourthCluster.pop(-1))
 cities.append(fourthCluster.pop(0))
 cities.append(fourthCluster.pop(0))
-
+"""
 
 firstList = tsp_util.combineClusters(firstList,secondList,thirdList,fourthList,cities)
 
 t1 = time.time()
 total = t1 - t0
 
-
-
 print("\n route:", firstList)
-
+print(len(firstList))
 sum = tsp_util.sumDistance(firstList)
 
 

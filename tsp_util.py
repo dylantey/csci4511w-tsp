@@ -67,7 +67,7 @@ def processFile(filename):
     return list
 
 def nearestNeighbor(list):
-    random_number = random.randint(0, len(list))
+    random_number = random.randint(0, len(list)-1)
     print(random_number)
 
     point = list.pop(random_number) # pop out random item from list
@@ -94,6 +94,72 @@ def combineClusters(firstList,secondList,thirdList,fourthList, cities):
 
     #connect amax to bmin
 
+    counter = 1
+    iteratorOfList = 1
+    print("cities")
+    print(cities)
+    for city in cities:
+        if city == []:
+            print("\n\n-----next list-----\n\n")
+            iteratorOfList += 1
+            counter += 1
+            continue
+        elif iteratorOfList == 1:
+            continue
+        elif counter == 1:
+            print("\n\n-----iterator is %d-----\n\n" %iteratorOfList)
+            print(city)
+            print(firstList)
+            firstList.remove(city)
+            print("\n\n-----iterator is %d is successful-----\n\n" %iteratorOfList)
+            iteratorOfList += 1
+        elif counter == 2:
+            print("\n\n-----iterator is %d-----\n\n" %iteratorOfList)
+            print(city)
+            print(secondList)
+            secondList.remove(city)
+            print("\n\n-----iterator is %d is successful-----\n\n" %iteratorOfList)
+            iteratorOfList += 1
+        elif counter == 3:
+            thirdList.remove(city)
+            iteratorOfList += 1
+        elif counter == 4:
+            fourthList.remove(city)
+            iteratorOfList += 1
+
+    counter = 1
+    iteratorOfList = 1
+    for city in cities:
+        if city == []:
+            if counter == 2:
+                firstList.extend(secondList)
+            elif counter == 3:
+                firstList.extend(thirdList)
+            elif counter == 4:
+                firstList.extend(fourthList)
+            iteratorOfList += 1
+            counter += 1
+        elif iteratorOfList == 1:
+            continue
+        elif counter == 1:
+            firstList.append(city)
+            iteratorOfList += 1
+        elif counter == 2:
+            secondList.append(city)
+            iteratorOfList += 1
+        elif counter == 3:
+            thirdList.append(city)
+            iteratorOfList += 1
+        elif counter == 4:
+            fourthList.append(city)
+            iteratorOfList += 1
+
+    firstList.append(cities[0])
+
+    return firstList
+
+
+"""
     firstList.remove(cities[0])
     firstList.remove(cities[1])
     secondList.remove(cities[4])
@@ -128,7 +194,4 @@ def combineClusters(firstList,secondList,thirdList,fourthList, cities):
     firstList.append(cities[15])
 
     firstList.extend(fourthList)
-
-
-
-    return firstList
+"""
